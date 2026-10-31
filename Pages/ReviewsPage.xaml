@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShipInfo.Pages.ReviewsPage" Title="Отзывы">
+  <Grid RowDefinitions="Auto,*,Auto" Padding="8">
+    <HorizontalStackLayout HorizontalOptions="Center" Spacing="0">
+      <Button x:Name="TabReviews" Text="ОТЗЫВЫ" Clicked="OnReviews" CornerRadius="0"/>
+      <Button x:Name="TabMsgs" Text="СООБЩЕНИЯ" Clicked="OnMsgs" CornerRadius="0"/>
+    </HorizontalStackLayout>
+    <CollectionView x:Name="List" Grid.Row="1">
+      <CollectionView.ItemTemplate>
+        <DataTemplate>
+          <Border Stroke="#3590DC" Margin="4,6" Padding="10" StrokeShape="RoundRectangle 10">
+            <VerticalStackLayout>
+              <Label Text="{Binding Author}" FontAttributes="Bold"/>
+              <Label Text="{Binding Text}"/>
+            </VerticalStackLayout>
+          </Border>
+        </DataTemplate>
+      </CollectionView.ItemTemplate>
+    </CollectionView>
+    <Grid Grid.Row="2" ColumnDefinitions="*,Auto">
+      <Entry x:Name="Input" Placeholder="Написать отзыв..."/>
+      <Button Grid.Column="1" Text="Отправить" Clicked="OnSend"/>
+    </Grid>
+  </Grid>
+</ContentPage>
