@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="ShipInfo.Pages.FleetPage" Title="Ship Info. Мой флот">
-  <CollectionView x:Name="List" ItemTemplate="{StaticResource ShipTemplate}"
-                  SelectionMode="Single" SelectionChanged="OnSelected">
-    <CollectionView.EmptyView><Label Text="Флот пуст. Добавьте суда через поиск." Margin="20"/></CollectionView.EmptyView>
-  </CollectionView>
-</ContentPage>
